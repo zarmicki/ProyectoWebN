@@ -1,0 +1,71 @@
+﻿@model ProyectoWebN.Data.Entity.Product
+
+@{
+    ViewData["Title"] = "Detalle del producto";
+}
+
+<h1>Detalles del producto seleccionado...</h1>
+
+<div>
+
+    <img src="~/Image/img3.jpg" class="img-fluid" alt="...">
+
+    <hr />
+    <dl class="row" background="~/Image/img1.jpg">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastPurchase)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.LastPurchase)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastSale)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.LastSale)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+    </dl>
+</div>
+
+<div class="col-md-4">
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img src="@Url.Content(Model.ImageUrl)" alt=" Image" style="width:100px; height:150px;max-width:100%; height:auto" />
+    }
+
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-outline-info">Volver al listado</a>
+</div>
